@@ -18,6 +18,8 @@ else
 CFLAGS += -g
 endif
 
+NAME := Abomination
+
 .PHONY:		install_dep obj clean fclean all GEN_SOURCES test check
 
 all: install_dep mfGUI.a $(OBJS) $(NAME)

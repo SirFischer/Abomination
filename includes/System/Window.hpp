@@ -11,7 +11,7 @@ private:
 	/****************************
 	 * Change window title here *
 	 ****************************/
-	std::string			mTitle = "default value";
+	std::string			mTitle = "Abomination";
 	
 	bool				mFullscreen = false;
 	sf::VideoMode		mMode = sf::VideoMode(1600, 900);
