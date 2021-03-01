@@ -60,6 +60,8 @@ void		OptionsState::HandleEvents()
 	while (mWindow->HandleEvent(event))
 	{
 		mf::GUI::HandleEvent(event);
+		if (event.type == sf::Event::Resized)
+			mWindow->ResetView(true);
 		if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape))
 		{
 			mIsActive = false;
