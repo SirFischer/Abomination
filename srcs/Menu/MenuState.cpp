@@ -64,6 +64,7 @@ void		MenuState::Init()
 	mf::GUI::AddWidget(mPlayBtn);
 	mf::GUI::AddWidget(mOptionsBtn);
 	mf::GUI::AddWidget(mQuitBtn);
+	Console::InitUI();
 }
 
 
@@ -75,9 +76,14 @@ void		MenuState::HandleEvents()
 		mf::GUI::HandleEvent(event);
 		if (event.type == sf::Event::Resized)
 			mWindow->ResetView(true);
-		if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape))
+		if (event.type == sf::Event::Closed)
 		{
 			mIsActive = false;
+			mStateReturnAction = StateAction::EXIT;
+		}
+		if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Tab)
+		{
+			Console::ToggleConsole();
 		}
 	}
 }

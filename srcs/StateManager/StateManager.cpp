@@ -18,11 +18,20 @@ void		StateManager::Run()
 
 	while (mStates.size())
 	{
-		mStates.top()->Init();
+		if (!mStates.top()->IsInitiated())
+			mStates.top()->Init();
 		action = mStates.top()->Run();
 
 		switch (action)
 		{
+		case StateAction::EXIT:
+			while (mStates.size())
+			{
+				delete mStates.top();
+				mStates.pop();
+			}
+			break;
+
 		case StateAction::POP:
 			delete mStates.top();
 			mStates.pop();

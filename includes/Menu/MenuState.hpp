@@ -2,6 +2,7 @@
 
 #include "State.hpp"
 #include "ResourceManager.hpp"
+#include "Console.hpp"
 
 class MenuState : public State
 {

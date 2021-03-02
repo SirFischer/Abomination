@@ -10,6 +10,7 @@ protected:
 	sf::Time		mDeltaTime = sf::seconds(1.f / 128.f);
 	StateAction		mStateReturnAction = StateAction::POP;
 
+	bool			mIsInit = false;
 	bool			mIsActive = true;
 	Window			*mWindow = NULL;
 
@@ -24,6 +25,7 @@ public:
 	virtual void		Update() = 0;
 	virtual void		Render() = 0;
 
+	bool				IsInitiated(){return (mIsInit);}
 };
 
 

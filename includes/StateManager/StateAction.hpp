@@ -2,6 +2,7 @@
 
 enum class StateAction
 {
+	EXIT,
 	POP,
 	MENU,
 	OPTIONS,
