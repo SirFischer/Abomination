@@ -1,8 +1,10 @@
 #include "Console.hpp"
 
-mf::Container		*Console::mConsoleWidget = NULL;
-mf::Text			*Console::mConsoleTextBox = NULL;
-mf::Text			*Console::mConsoleInputBox = NULL;
+mf::Container									*Console::mConsoleWidget = NULL;
+mf::Text										*Console::mConsoleTextBox = NULL;
+mf::Text										*Console::mConsoleInputBox = NULL;
+
+std::map<std::string, Console::sCommand>		Console::mCommands = std::map<std::string, Console::sCommand>();
 
 void		Console::Init()
 {
@@ -43,9 +45,29 @@ void		Console::ToggleConsole()
 	mConsoleWidget->SetDisabled(!mConsoleWidget->IsDisabled());
 }
 
+void		Console::AddCommand(sCommand tCommand, std::string tCommandName)
+{
+	mCommands[tCommandName] = tCommand;
+}
+
+
 void		Console::HandleEvent()
 {
 	//HANDLE INPUT EVENTS
+	if (EventHandler::GetEventState(EventHandler::eEvent::CONFIRM))
+	{
+		EventHandler::SetEventState(EventHandler::eEvent::CONFIRM, false);
+		std::string command = mConsoleInputBox->GetString();
+		//Execute command
+		if (command == "PLAY\n")
+		{
+			mCommands["PLAY"].mFunction(std::vector<std::string>());
+			mConsoleTextBox->AddText("Command ran succesfully!\n");
+		}
+		else
+			mConsoleTextBox->AddText("Command failed...\n");
+		mConsoleInputBox->SetText("");
+	}
 }
 
 

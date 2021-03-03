@@ -30,6 +30,12 @@ void		MenuState::Init()
 		*active = false;
 	});
 
+	Console::AddCommand((Console::sCommand){.mFunction = [actionReturn, active](std::vector<std::string>) {
+		*actionReturn = StateAction::GAME;
+		*active = false;
+		return (Console::eCommandStatus::SUCCESS);
+	},.mHelpShort = "n33", .mHelpLong = "no"}, "PLAY");
+
 	mOptionsBtn = mf::Button::Create(sf::Color::Blue, sf::Color::Yellow);
 	mOptionsBtn->SetPositionPercentage(true)->SetPosition(45, 40);
 	mOptionsBtn->SetSize(150, 40);
@@ -82,8 +88,8 @@ void		MenuState::HandleEvents()
 			mIsActive = false;
 			mStateReturnAction = StateAction::EXIT;
 		}
-		
 	}
+	Console::HandleEvent();
 }
 
 void		MenuState::Update()

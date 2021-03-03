@@ -11,6 +11,7 @@ void						EventHandler::Init()
 void						EventHandler::LoadDefaultBindings()
 {
 	BindKey(sf::Keyboard::Tab, eEvent::OPEN_CONSOLE);
+	BindKey(sf::Keyboard::Enter, eEvent::CONFIRM);
 }
 
 void						EventHandler::HandleEvent(sf::Event &tEvent)

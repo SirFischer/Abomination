@@ -19,7 +19,8 @@ class EventHandler
 		ATTACK,
 
 		//MISC
-		OPEN_CONSOLE
+		OPEN_CONSOLE,
+		CONFIRM
 	};
 
 	typedef std::map<EventHandler::eEvent, bool>			tEventStateList;
