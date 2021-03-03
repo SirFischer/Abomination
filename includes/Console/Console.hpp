@@ -9,6 +9,8 @@ private:
 	Console(/* args */) {}
 	~Console() {}
 	static mf::Container	*mConsoleWidget;
+	static mf::Text			*mConsoleTextBox;
+	static mf::Text			*mConsoleInputBox;
 
 public:
 	
