@@ -2,6 +2,7 @@
 
 #include "Window.hpp"
 #include "StateAction.hpp"
+#include "Event/EventHandler.hpp"
 
 class State
 {

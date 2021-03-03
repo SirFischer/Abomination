@@ -73,6 +73,7 @@ void		MenuState::HandleEvents()
 	sf::Event event;
 	while (mWindow->HandleEvent(event))
 	{
+		EventHandler::HandleEvent(event);
 		mf::GUI::HandleEvent(event);
 		if (event.type == sf::Event::Resized)
 			mWindow->ResetView(true);
@@ -81,15 +82,17 @@ void		MenuState::HandleEvents()
 			mIsActive = false;
 			mStateReturnAction = StateAction::EXIT;
 		}
-		if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Tab)
-		{
-			Console::ToggleConsole();
-		}
+		
 	}
 }
 
 void		MenuState::Update()
 {
+	if (EventHandler::GetEventState(EventHandler::eEvent::OPEN_CONSOLE))
+	{
+		Console::ToggleConsole();
+		EventHandler::SetEventState(EventHandler::eEvent::OPEN_CONSOLE, false);
+	}
 }
 
 void		MenuState::Render()

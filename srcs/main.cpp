@@ -3,6 +3,8 @@
 void	Init()
 {
 	Console::Init();
+	EventHandler::Init();
+	EventHandler::LoadDefaultBindings();
 }
 
 int		main( void )

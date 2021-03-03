@@ -13,10 +13,10 @@ private:
 	static mf::Text			*mConsoleInputBox;
 
 public:
-	
-
 	static void		Init();
 	static void		InitUI();
 	static void		ToggleConsole();
+	
+	static void		HandleEvent();
 };
 

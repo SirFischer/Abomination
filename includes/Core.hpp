@@ -4,4 +4,5 @@
 #include "ResourceManager/ResourceManager.hpp"
 #include "StateManager/StateManager.hpp"
 #include "Console.hpp"
+#include "Event/EventHandler.hpp"
 

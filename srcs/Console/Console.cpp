@@ -38,10 +38,15 @@ void		Console::InitUI()
 	
 }
 
-
 void		Console::ToggleConsole()
 {
 	mConsoleWidget->SetDisabled(!mConsoleWidget->IsDisabled());
 }
+
+void		Console::HandleEvent()
+{
+	//HANDLE INPUT EVENTS
+}
+
 
 
