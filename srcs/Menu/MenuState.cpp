@@ -34,7 +34,7 @@ void		MenuState::Init()
 		*actionReturn = StateAction::GAME;
 		*active = false;
 		return (Console::eCommandStatus::SUCCESS);
-	},.mHelpShort = "n33", .mHelpLong = "no"}, "PLAY");
+	},.mHelpShort = "play the game", .mHelpLong = "This command makes the game play"}, "play");
 
 	mOptionsBtn = mf::Button::Create(sf::Color::Blue, sf::Color::Yellow);
 	mOptionsBtn->SetPositionPercentage(true)->SetPosition(45, 40);

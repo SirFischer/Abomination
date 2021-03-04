@@ -40,6 +40,8 @@ private:
 	 **/
 	static std::map<std::string, sCommand>		mCommands;
 
+	static void									LoadInternalCommands();
+
 public:
 	static void									Init();
 	static void									InitUI();
@@ -50,5 +52,14 @@ public:
 	static eCommandStatus						ProcessCommand(std::string tCommand);
 	
 	static void									Update();
+
+	static void									AddString(std::string tMessage);
+
+	/**
+	 * GETTERS
+	 **/
+	static std::map<std::string, sCommand>		&GetCommands(){return (mCommands);}
 };
+
+//Internal Console Commands
 

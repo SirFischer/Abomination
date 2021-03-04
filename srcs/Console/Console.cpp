@@ -8,7 +8,7 @@ std::map<std::string, Console::sCommand>		Console::mCommands = std::map<std::str
 
 void		Console::Init()
 {
-	
+	LoadInternalCommands();
 }
 
 void		Console::InitUI()
@@ -26,6 +26,7 @@ void		Console::InitUI()
 	mConsoleTextBox->SetBackgroundColor(sf::Color(37, 37, 37, 200));
 	mConsoleTextBox->SetOutlineColor(sf::Color(100, 100, 100, 255));
 	mConsoleTextBox->SetOutlineThickness(1);
+	mConsoleTextBox->SetCharacterSize(14);
 	mConsoleWidget->AddWidget(mConsoleTextBox);
 
 	mConsoleInputBox = mf::Text::Create("assets/fonts/Roboto-Regular.ttf", "");
@@ -67,7 +68,11 @@ Console::eCommandStatus		Console::ProcessCommand(std::string tCommand)
 		return (mCommands[command].mFunction(parameters));
 	}
 	else
+	{
+		Console::AddString(command + " is not a valid command!");
 		return (eCommandStatus::FAILURE);
+	}
+		
 }
 
 
@@ -78,11 +83,24 @@ void		Console::Update()
 	{
 		EventHandler::SetEventState(EventHandler::eEvent::CONFIRM, false);
 		std::string command = mConsoleInputBox->GetString();
+		command.pop_back();
+		time_t	currentTime = time(NULL);
+		std::tm	*ltm = localtime(&currentTime);
+		Console::AddString(((ltm->tm_hour <= 9) ? "0" : "") + std::to_string(ltm->tm_hour) + ":" +
+							((ltm->tm_min <= 9) ? "0" : "") + std::to_string(ltm->tm_min) + ":" +
+							((ltm->tm_sec <= 9) ? "0" : "") + std::to_string(ltm->tm_sec) + " - " + command);
 		//Execute command
 		ProcessCommand(command);
 		mConsoleInputBox->SetText("");
+		Console::AddString("");
 	}
 }
+
+void		Console::AddString(std::string tMessage)
+{
+	mConsoleTextBox->AddText(tMessage + '\n');
+}
+
 
 
 
