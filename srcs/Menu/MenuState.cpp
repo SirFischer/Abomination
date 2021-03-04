@@ -89,11 +89,12 @@ void		MenuState::HandleEvents()
 			mStateReturnAction = StateAction::EXIT;
 		}
 	}
-	Console::HandleEvent();
+	
 }
 
 void		MenuState::Update()
 {
+	Console::Update();
 	if (EventHandler::GetEventState(EventHandler::eEvent::OPEN_CONSOLE))
 	{
 		Console::ToggleConsole();

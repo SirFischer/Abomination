@@ -50,8 +50,28 @@ void		Console::AddCommand(sCommand tCommand, std::string tCommandName)
 	mCommands[tCommandName] = tCommand;
 }
 
+Console::eCommandStatus		Console::ProcessCommand(std::string tCommand)
+{
+	std::vector<std::string>	parameters;
+	std::replace(tCommand.begin(), tCommand.end(), '\t', ' ');
+	std::stringstream			ss(tCommand);
+	std::string					command;
+	std::string					tmp;
+	ss >> command;
+	while (ss >> tmp)
+	{
+		parameters.push_back(tmp);
+	}
+	if (mCommands.count(command))
+	{
+		return (mCommands[command].mFunction(parameters));
+	}
+	else
+		return (eCommandStatus::FAILURE);
+}
 
-void		Console::HandleEvent()
+
+void		Console::Update()
 {
 	//HANDLE INPUT EVENTS
 	if (EventHandler::GetEventState(EventHandler::eEvent::CONFIRM))
@@ -59,13 +79,7 @@ void		Console::HandleEvent()
 		EventHandler::SetEventState(EventHandler::eEvent::CONFIRM, false);
 		std::string command = mConsoleInputBox->GetString();
 		//Execute command
-		if (command == "PLAY\n")
-		{
-			mCommands["PLAY"].mFunction(std::vector<std::string>());
-			mConsoleTextBox->AddText("Command ran succesfully!\n");
-		}
-		else
-			mConsoleTextBox->AddText("Command failed...\n");
+		ProcessCommand(command);
 		mConsoleInputBox->SetText("");
 	}
 }

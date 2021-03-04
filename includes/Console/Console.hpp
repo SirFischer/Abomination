@@ -3,6 +3,7 @@
 #include <functional>
 #include <map>
 #include <vector>
+#include <sstream>
 
 #include "Window.hpp"
 #include "mfGUI.hpp"
@@ -45,7 +46,9 @@ public:
 	static void									ToggleConsole();
 
 	static void									AddCommand(sCommand tCommand, std::string tCommandName);
+
+	static eCommandStatus						ProcessCommand(std::string tCommand);
 	
-	static void									HandleEvent();
+	static void									Update();
 };
 
