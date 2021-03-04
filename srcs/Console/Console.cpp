@@ -20,7 +20,7 @@ void		Console::InitUI()
 	mConsoleWidget->SetBackground(sf::Color(57, 57, 57, 200));
 	mf::GUI::AddWidget(mConsoleWidget);
 
-	mConsoleTextBox = mf::Text::Create("assets/fonts/Roboto-Regular.ttf", "");
+	mConsoleTextBox = mf::Text::Create("assets/fonts/FiraCode-VariableFont_wght.ttf", "");
 	mConsoleTextBox->SetSizePercentage(true)->SetSize(98, 80);
 	mConsoleTextBox->SetPositionPercentage(true)->SetPosition(1, 1);
 	mConsoleTextBox->SetBackgroundColor(sf::Color(37, 37, 37, 200));
@@ -29,7 +29,7 @@ void		Console::InitUI()
 	mConsoleTextBox->SetCharacterSize(14);
 	mConsoleWidget->AddWidget(mConsoleTextBox);
 
-	mConsoleInputBox = mf::Text::Create("assets/fonts/Roboto-Regular.ttf", "");
+	mConsoleInputBox = mf::Text::Create("assets/fonts/FiraCode-VariableFont_wght.ttf", "");
 	mConsoleInputBox->SetSizePercentage(true)->SetSize(98, 10);
 	mConsoleInputBox->SetPositionPercentage(true)->SetPosition(1, 85);
 	mConsoleInputBox->SetBackgroundColor(sf::Color(37, 37, 37, 200));
