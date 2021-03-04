@@ -1,6 +1,7 @@
 #pragma once
 
 #include "State.hpp"
+#include "Console.hpp"
 
 class GameState : public State
 {

@@ -16,7 +16,7 @@ void		GameState::Init()
 	mf::GUI::ClearWidgets();
 	mIsActive = true;
 	mStateReturnAction = StateAction::POP;
-
+	Console::InitUI();
 	/**
 	 * INIT STATE AND GUI
 	 **/
@@ -27,6 +27,7 @@ void		GameState::HandleEvents()
 	sf::Event event;
 	while (mWindow->HandleEvent(event))
 	{
+		EventHandler::HandleEvent(event);
 		mf::GUI::HandleEvent(event);
 		if (event.type == sf::Event::Resized)
 			mWindow->ResetView(true);
@@ -40,7 +41,16 @@ void		GameState::HandleEvents()
 
 void		GameState::Update()
 {
-	
+	Console::Update();
+	if (EventHandler::GetEventState(EventHandler::eEvent::OPEN_CONSOLE))
+	{
+		Console::ToggleConsole();
+		if (Console::IsOpen())
+			mWindow->ShowCursor();
+		else
+			mWindow->HideCursor();
+		EventHandler::SetEventState(EventHandler::eEvent::OPEN_CONSOLE, false);
+	}
 }
 
 void		GameState::Render()

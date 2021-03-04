@@ -30,12 +30,6 @@ void		MenuState::Init()
 		*active = false;
 	});
 
-	Console::AddCommand((Console::sCommand){.mFunction = [actionReturn, active](std::vector<std::string>) {
-		*actionReturn = StateAction::GAME;
-		*active = false;
-		return (Console::eCommandStatus::SUCCESS);
-	},.mHelpShort = "play the game", .mHelpLong = "This command makes the game play"}, "play");
-
 	mOptionsBtn = mf::Button::Create(sf::Color::Blue, sf::Color::Yellow);
 	mOptionsBtn->SetPositionPercentage(true)->SetPosition(45, 40);
 	mOptionsBtn->SetSize(150, 40);

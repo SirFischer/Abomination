@@ -59,6 +59,7 @@ public:
 	 * GETTERS
 	 **/
 	static std::map<std::string, sCommand>		&GetCommands(){return (mCommands);}
+	static bool									IsOpen(){return (!mConsoleWidget->IsDisabled());}
 };
 
 //Internal Console Commands
