@@ -101,6 +101,11 @@ void		Console::AddString(std::string tMessage)
 	mConsoleTextBox->AddText(tMessage + '\n');
 }
 
+void		Console::ClearConsole()
+{
+	mConsoleTextBox->SetText("");
+}
+
 
 
 

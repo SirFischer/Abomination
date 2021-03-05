@@ -54,6 +54,7 @@ public:
 	static void									Update();
 
 	static void									AddString(std::string tMessage);
+	static void									ClearConsole();
 
 	/**
 	 * GETTERS
