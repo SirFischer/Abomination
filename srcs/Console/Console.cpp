@@ -75,14 +75,13 @@ Console::eCommandStatus		Console::ProcessCommand(std::string tCommand)
 		Console::AddString(command + " is not a valid command!");
 		return (eCommandStatus::FAILURE);
 	}
-		
 }
 
 
 void		Console::Update()
 {
 	//HANDLE INPUT EVENTS
-	if (EventHandler::GetEventState(EventHandler::eEvent::CONFIRM))
+	if (EventHandler::GetEventState(EventHandler::eEvent::CONFIRM) && mConsoleInputBox->IsFocus())
 	{
 		EventHandler::SetEventState(EventHandler::eEvent::CONFIRM, false);
 		std::string command = mConsoleInputBox->GetString();
