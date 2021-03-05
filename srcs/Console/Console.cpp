@@ -29,6 +29,7 @@ void		Console::InitUI()
 	mConsoleTextBox->SetCharacterSize(14);
 	mConsoleTextBox->GetScrollBar()->SetBackgroundColor(sf::Color(37, 37, 37, 200));
 	mConsoleTextBox->GetScrollBar()->GetButton()->SetBackground(sf::Color(160, 160, 160, 160));
+	mConsoleTextBox->GetScrollBar()->GetButton()->SetHoverBackground(sf::Color(100, 100, 120, 160));
 	mConsoleWidget->AddWidget(mConsoleTextBox);
 
 	mConsoleInputBox = mf::Text::Create("assets/fonts/FiraCode-VariableFont_wght.ttf", "");
