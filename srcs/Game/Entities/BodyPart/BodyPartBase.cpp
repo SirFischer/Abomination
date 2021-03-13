@@ -8,12 +8,19 @@ namespace BodyPart
 		if (!tTexture)
 			return ;
 		mTexture = *tTexture;
+		mSprite.setTexture(mTexture);
+	}
+
+
+	void			BodyPartBase::SetPosition(sf::Vector2f tPosition)
+	{
+		mSprite.setPosition(tPosition);
 	}
 
 
 	void			BodyPartBase::Render(Window *tWindow)
 	{
-		(void)(tWindow);
+		tWindow->Draw(mSprite);
 	}
 	
 }

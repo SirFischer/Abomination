@@ -23,10 +23,29 @@ Entity::~Entity()
 
 }
 
+void			Entity::SetPosition(sf::Vector2f tPosition)
+{
+	mPosition = tPosition;
+	if (mHead.get())
+		mHead->SetPosition(mPosition);
+	if (mTorso.get())
+		mTorso->SetPosition(mPosition);
+	if (mLegLeft.get())
+		mLegLeft->SetPosition(mPosition);
+	if (mLegRight.get())
+		mLegRight->SetPosition(mPosition);
+	if (mArmLeft.get())
+		mArmLeft->SetPosition(mPosition);
+	if (mArmRight.get())
+		mArmRight->SetPosition(mPosition);
+}
+
+
 
 void			Entity::Update()
 {
-
+	mPosition += mVelocity;
+	SetPosition(mPosition);
 }
 
 void			Entity::Render(Window* tWindow)

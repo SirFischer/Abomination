@@ -51,6 +51,7 @@ void		GameState::Update()
 			mWindow->HideCursor();
 		EventHandler::SetEventState(EventHandler::eEvent::OPEN_CONSOLE, false);
 	}
+	mPlayer.Update();
 }
 
 void		GameState::Render()
@@ -58,6 +59,7 @@ void		GameState::Render()
 	mWindow->Clear(sf::Color::Green);
 
 	//RENDER YOUR STUFF
+	mPlayer.Render(mWindow);
 	
 	mf::GUI::Render();
 	mWindow->Render();

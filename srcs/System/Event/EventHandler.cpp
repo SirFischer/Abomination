@@ -12,6 +12,10 @@ void						EventHandler::LoadDefaultBindings()
 {
 	BindKey(sf::Keyboard::Tab, eEvent::OPEN_CONSOLE);
 	BindKey(sf::Keyboard::Enter, eEvent::CONFIRM);
+	BindKey(sf::Keyboard::D, eEvent::WALK_RIGHT);
+	BindKey(sf::Keyboard::A, eEvent::WALK_LEFT);
+	BindKey(sf::Keyboard::W, eEvent::WALK_UP);
+	BindKey(sf::Keyboard::S, eEvent::WALK_DOWN);
 }
 
 void						EventHandler::HandleEvent(sf::Event &tEvent)
@@ -20,10 +24,12 @@ void						EventHandler::HandleEvent(sf::Event &tEvent)
 	switch (tEvent.type)
 	{
 		case sf::Event::KeyPressed:
-			mEventStates[mBindingMap[tEvent.key.code]] = true;
+			if (mBindingMap.count(tEvent.key.code))
+				mEventStates[mBindingMap[tEvent.key.code]] = true;
 		break;
 		case sf::Event::KeyReleased:
-			mEventStates[mBindingMap[tEvent.key.code]] = false;
+			if (mBindingMap.count(tEvent.key.code))
+				mEventStates[mBindingMap[tEvent.key.code]] = false;
 		break;
 		default:
 		break;

@@ -2,6 +2,7 @@
 
 #include <map>
 #include <functional>
+#include <iostream>
 #include <SFML/Graphics.hpp>
 
 

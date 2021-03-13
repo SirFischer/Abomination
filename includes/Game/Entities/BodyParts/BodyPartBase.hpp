@@ -14,6 +14,8 @@ namespace BodyPart
 		~BodyPartBase() {}
 
 		void			SetTexture(sf::Texture	*tTexture);
+		void			SetPosition(sf::Vector2f tPosition);
+
 		void			Render(Window *tWindow);
 	};
 }
