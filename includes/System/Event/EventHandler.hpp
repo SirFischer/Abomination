@@ -5,6 +5,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
+#define EVENTHANDLER_BUTTON_OFFSET 1000
 
 class EventHandler
 {
@@ -39,6 +40,7 @@ public:
 	static void					HandleEvent(sf::Event &tEvent);
 
 	static void					BindKey(sf::Keyboard::Key tKey, eEvent tEvent);
+	static void					BindButton(sf::Mouse::Button tButton, eEvent tEvent);
 	static void					SetEventState(eEvent tEvent, bool tState);
 	static bool					GetEventState(eEvent tEvent);
 };

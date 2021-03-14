@@ -16,6 +16,8 @@ void						EventHandler::LoadDefaultBindings()
 	BindKey(sf::Keyboard::A, eEvent::WALK_LEFT);
 	BindKey(sf::Keyboard::W, eEvent::WALK_UP);
 	BindKey(sf::Keyboard::S, eEvent::WALK_DOWN);
+
+	BindButton(sf::Mouse::Left, eEvent::ATTACK);
 }
 
 void						EventHandler::HandleEvent(sf::Event &tEvent)
@@ -31,6 +33,14 @@ void						EventHandler::HandleEvent(sf::Event &tEvent)
 			if (mBindingMap.count(tEvent.key.code))
 				mEventStates[mBindingMap[tEvent.key.code]] = false;
 		break;
+		case sf::Event::MouseButtonPressed:
+			if (mBindingMap.count(tEvent.key.code + EVENTHANDLER_BUTTON_OFFSET))
+				mEventStates[mBindingMap[tEvent.key.code + EVENTHANDLER_BUTTON_OFFSET]] = true;
+		break;
+		case sf::Event::MouseButtonReleased:
+			if (mBindingMap.count(tEvent.key.code + EVENTHANDLER_BUTTON_OFFSET))
+				mEventStates[mBindingMap[tEvent.key.code + EVENTHANDLER_BUTTON_OFFSET]] = false;
+		break;
 		default:
 		break;
 	}
@@ -39,6 +49,11 @@ void						EventHandler::HandleEvent(sf::Event &tEvent)
 void						EventHandler::BindKey(sf::Keyboard::Key tKey, eEvent tEvent)
 {
 	mBindingMap[(u_int32_t)tKey] = tEvent;
+}
+
+void						EventHandler::BindButton(sf::Mouse::Button tButton, eEvent tEvent)
+{
+	mBindingMap[((u_int32_t)tButton) + EVENTHANDLER_BUTTON_OFFSET] = tEvent;
 }
 
 void						EventHandler::SetEventState(eEvent tEvent, bool tState)

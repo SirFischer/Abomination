@@ -17,6 +17,16 @@ namespace BodyPart
 		mSprite.setPosition(tPosition);
 	}
 
+	void			BodyPartBase::SetState(eEntityState tState, eEntityDirection tDirection)
+	{
+		mState = tState;
+		mDirection = tDirection;
+	}
+
+	void			BodyPartBase::Update()
+	{
+		
+	}
 
 	void			BodyPartBase::Render(Window *tWindow)
 	{

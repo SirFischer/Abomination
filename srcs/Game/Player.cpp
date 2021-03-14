@@ -25,7 +25,13 @@ void		Player::Update()
 		mVelocity.y -= mAcceleration.y; //replace with move up
 	if (EventHandler::GetEventState(EventHandler::eEvent::WALK_DOWN))
 		mVelocity.y += mAcceleration.y; //replace with move down
+	if (EventHandler::GetEventState(EventHandler::eEvent::ATTACK))
+	{
+		std::cout << "ATTACKED" << std::endl;
+		EventHandler::SetEventState(EventHandler::eEvent::ATTACK, false);
+	}
 	Entity::Update();
 	mVelocity.x *= 0.9;
 	mVelocity.y *= 0.9;
+
 }
