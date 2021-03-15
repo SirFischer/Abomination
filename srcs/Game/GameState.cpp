@@ -4,6 +4,11 @@ GameState::GameState(Window *tWindow)
 {
 	mWindow = tWindow;
 	mWindow->HideCursor();
+
+	//TESTMAP
+	Room room;
+	//room.LoadFromFile();
+	mMap.AddRoom(room);
 }
 
 GameState::~GameState()
