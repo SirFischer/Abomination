@@ -21,7 +21,7 @@ void		MenuState::Init()
 	 **/
 
 	mPlayBtn = mf::Button::Create(sf::Color::Green, sf::Color::Cyan);
-	mPlayBtn->SetPositionPercentage(true)->SetPosition(45, 30);
+	mPlayBtn->SetPositionPercentage(true, true)->SetPosition(45, 30);
 	mPlayBtn->SetSize(150, 40);
 	StateAction	*actionReturn = &mStateReturnAction;
 	bool		*active = &mIsActive;
@@ -31,7 +31,7 @@ void		MenuState::Init()
 	});
 
 	mOptionsBtn = mf::Button::Create(sf::Color::Blue, sf::Color::Yellow);
-	mOptionsBtn->SetPositionPercentage(true)->SetPosition(45, 40);
+	mOptionsBtn->SetPositionPercentage(true, true)->SetPosition(45, 40);
 	mOptionsBtn->SetSize(150, 40);
 	mOptionsBtn->SetClickEvent([actionReturn, active] {
 		*actionReturn = StateAction::OPTIONS;
@@ -39,7 +39,7 @@ void		MenuState::Init()
 	});
 
 		mQuitBtn = mf::Button::Create(sf::Color::Red, sf::Color::Yellow);
-	mQuitBtn->SetPositionPercentage(true)->SetPosition(45, 50);
+	mQuitBtn->SetPositionPercentage(true, true)->SetPosition(45, 50);
 	mQuitBtn->SetSize(150, 40);
 	mQuitBtn->SetClickEvent([actionReturn, active] {
 		*actionReturn = StateAction::POP;

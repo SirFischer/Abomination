@@ -2,8 +2,7 @@
 
 Map::Map()
 {
-	srand(time(0));
-	mSeed = (rand() % 1000) + 1;
+	mSeed = time(0);
 }
 
 Map::~Map()

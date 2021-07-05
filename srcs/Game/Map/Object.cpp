@@ -10,7 +10,7 @@ void			Object::LoadTextureFromFile(sf::Texture *tTexture)
 {
 	if (!tTexture)
 	{
-		std::cout << "Failed to load texture... (Class Object) Pointer == " << (uint32_t)tTexture << std::endl;
+		std::cout << "Failed to load texture... (Class Object) Pointer == " << (uint64_t)(tTexture) << std::endl;
 		return ;
 	}
 	mTexture = *tTexture;

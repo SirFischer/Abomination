@@ -5,7 +5,6 @@
 #include <vector>
 #include <sstream>
 
-#include "Window.hpp"
 #include "mfGUI.hpp"
 #include "Event/EventHandler.hpp"
 

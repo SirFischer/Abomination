@@ -1,5 +1,7 @@
 #include "GameState.hpp"
 
+#include "Window.hpp"
+
 GameState::GameState(Window *tWindow)
 {
 	mWindow = tWindow;
@@ -7,7 +9,7 @@ GameState::GameState(Window *tWindow)
 
 	//TESTMAP
 	Room room;
-	//room.LoadFromFile();
+	room.LoadFromFile("assets/maps/testmap/basicTest.map");
 	mMap.AddRoom(room);
 }
 

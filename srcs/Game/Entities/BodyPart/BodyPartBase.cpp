@@ -1,4 +1,5 @@
 #include "BodyPartBase.hpp"
+#include "Window.hpp"
 
 namespace BodyPart
 {

@@ -3,12 +3,13 @@
 #include <memory>
 #include <map>
 
-#include "Window.hpp"
 #include "ResourceManager.hpp"
 #include "BodyParts/BodyParts.hpp"
 #include "EntityState.hpp"
 #include "EntityDirection.hpp"
 #include "Event/EventHandler.hpp"
+
+class Window;
 
 class Entity
 {

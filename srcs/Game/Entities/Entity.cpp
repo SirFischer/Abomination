@@ -1,5 +1,7 @@
 #include "Entity.hpp"
 
+#include "Window.hpp"
+
 Entity::Entity(/* args */)
 {
 	try

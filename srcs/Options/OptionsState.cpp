@@ -23,7 +23,7 @@ void		OptionsState::Init()
 	 * INIT STATE AND GUI
 	 **/
 	mSoundTestBtn = mf::Button::Create(sf::Color::Green, sf::Color::Cyan);
-	mSoundTestBtn->SetPositionPercentage(true)->SetPosition(45, 40);
+	mSoundTestBtn->SetPositionPercentage(true, true)->SetPosition(45, 40);
 	mSoundTestBtn->SetSize(150, 40);
 	mSoundTestBtn->SetClickEvent([&] {
 		SoundPlayer::Init();
@@ -37,7 +37,7 @@ void		OptionsState::Init()
 	mSoundTestBtn->SetText("Sound Test");
 
 	mQuitBtn = mf::Button::Create(sf::Color::Red, sf::Color::Yellow);
-	mQuitBtn->SetPositionPercentage(true)->SetPosition(45, 50);
+	mQuitBtn->SetPositionPercentage(true, true)->SetPosition(45, 50);
 	mQuitBtn->SetSize(150, 40);
 	mQuitBtn->SetClickEvent([actionReturn, active] {
 		*actionReturn = StateAction::POP;

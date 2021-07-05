@@ -16,13 +16,13 @@ void		Console::InitUI()
 	mConsoleWidget = mf::Container::Create();
 	mConsoleWidget->SetDisabled(true);
 	mConsoleWidget->SetIndex(1);
-	mConsoleWidget->SetSizePercentage(true)->SetSize(100, 40);
+	mConsoleWidget->SetSizePercentage(true, false)->SetSize(100, 500);
 	mConsoleWidget->SetBackground(sf::Color(57, 57, 57, 200));
 	mf::GUI::AddWidget(mConsoleWidget);
 
 	mConsoleTextBox = mf::Text::Create("assets/fonts/FiraCode-VariableFont_wght.ttf", "");
-	mConsoleTextBox->SetSizePercentage(true)->SetSize(98, 80);
-	mConsoleTextBox->SetPositionPercentage(true)->SetPosition(1, 1);
+	mConsoleTextBox->SetSizePercentage(true, true)->SetSize(98, 85);
+	mConsoleTextBox->SetPositionPercentage(true, true)->SetPosition(1, 1);
 	mConsoleTextBox->SetBackgroundColor(sf::Color(37, 37, 37, 200));
 	mConsoleTextBox->SetOutlineColor(sf::Color(100, 100, 100, 255));
 	mConsoleTextBox->SetOutlineThickness(1);
@@ -33,8 +33,8 @@ void		Console::InitUI()
 	mConsoleWidget->AddWidget(mConsoleTextBox);
 
 	mConsoleInputBox = mf::Text::Create("assets/fonts/FiraCode-VariableFont_wght.ttf", "");
-	mConsoleInputBox->SetSizePercentage(true)->SetSize(98, 10);
-	mConsoleInputBox->SetPositionPercentage(true)->SetPosition(1, 85);
+	mConsoleInputBox->SetSizePercentage(true, false)->SetSize(98, 30);
+	mConsoleInputBox->SetPositionPercentage(true, true)->SetPosition(1, 90);
 	mConsoleInputBox->SetBackgroundColor(sf::Color(37, 37, 37, 200));
 	mConsoleInputBox->SetOutlineColor(sf::Color(100, 100, 100, 255));
 	mConsoleInputBox->SetOutlineThickness(1);

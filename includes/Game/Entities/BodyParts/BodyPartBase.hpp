@@ -1,7 +1,9 @@
 #pragma once
-#include "Window.hpp"
+#include <SFML/Graphics.hpp>
 #include "Entities/EntityState.hpp"
 #include "Entities/EntityDirection.hpp"
+
+class Window;
 
 namespace BodyPart
 {
