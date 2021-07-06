@@ -63,9 +63,10 @@ void		GameState::Update()
 
 void		GameState::Render()
 {
-	mWindow->Clear(sf::Color::Green);
+	mWindow->Clear(sf::Color::White);
 
 	//RENDER YOUR STUFF
+	mMap.Draw(mWindow);
 	mPlayer.Render(mWindow);
 	
 	mf::GUI::Render();

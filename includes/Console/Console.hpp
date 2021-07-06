@@ -17,7 +17,7 @@ public:
 		BAD_COMMAND,
 		BAD_ARGUMENTS
 	};
-	typedef std::function<Console::eCommandStatus(std::vector<std::string> tParams)> tCommandFunction;
+	typedef std::function<Console::eCommandStatus(const std::vector<std::string> &tParams)> tCommandFunction;
 	struct sCommand {
 		Console::tCommandFunction				mFunction;
 		std::string								mHelpShort;
@@ -46,13 +46,13 @@ public:
 	static void									InitUI();
 	static void									ToggleConsole();
 
-	static void									AddCommand(sCommand tCommand, std::string tCommandName);
+	static void									AddCommand(sCommand tCommand, const std::string &tCommandName);
 
 	static eCommandStatus						ProcessCommand(std::string tCommand);
 	
 	static void									Update();
 
-	static void									AddString(std::string tMessage);
+	static void									AddString(const std::string &tMessage);
 	static void									ClearConsole();
 
 	/**

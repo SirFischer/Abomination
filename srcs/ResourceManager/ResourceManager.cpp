@@ -18,7 +18,7 @@ ResourceManager::~ResourceManager()
  * To be extended to sf::texture, sf::audio, sf::image etc...
  **/
 
-sf::Font		*ResourceManager::LoadFont(std::string tPath)
+sf::Font		*ResourceManager::LoadFont(const std::string &tPath)
 {
 	sf::Font	*font = NULL;
 
@@ -39,7 +39,7 @@ sf::Font		*ResourceManager::LoadFont(std::string tPath)
 	return (font);
 }
 
-sf::Texture		*ResourceManager::LoadTexture(std::string tPath)
+sf::Texture		*ResourceManager::LoadTexture(const std::string &tPath)
 {
 	sf::Texture	*texture = NULL;
 
@@ -60,7 +60,7 @@ sf::Texture		*ResourceManager::LoadTexture(std::string tPath)
 	return (texture);
 }
 
-sf::SoundBuffer		*ResourceManager::LoadSoundBuffer(std::string tPath)
+sf::SoundBuffer		*ResourceManager::LoadSoundBuffer(const std::string &tPath)
 {
 	sf::SoundBuffer	*soundbuffer = NULL;
 

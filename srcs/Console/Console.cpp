@@ -49,7 +49,7 @@ void		Console::ToggleConsole()
 	mConsoleWidget->SetDisabled(!mConsoleWidget->IsDisabled());
 }
 
-void		Console::AddCommand(sCommand tCommand, std::string tCommandName)
+void		Console::AddCommand(sCommand tCommand, const std::string &tCommandName)
 {
 	mCommands[tCommandName] = tCommand;
 }
@@ -98,7 +98,7 @@ void		Console::Update()
 	}
 }
 
-void		Console::AddString(std::string tMessage)
+void		Console::AddString(const std::string &tMessage)
 {
 	mConsoleTextBox->AddText(tMessage + '\n');
 }

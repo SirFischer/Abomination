@@ -3,6 +3,7 @@
 #include <vector>
 #include <random>
 
+#include "Window.hpp"
 #include "Room.hpp"
 #include "Object.hpp"
 
@@ -20,4 +21,6 @@ public:
 
 	void					AddRoom(Room &tRoom){mRooms.push_back(tRoom);};
 	void					AddObject(Object &tObject){mObjects.push_back(tObject);};
+
+	void					Draw(Window *tWindow);
 };

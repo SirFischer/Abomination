@@ -1,18 +1,11 @@
 #include "Object.hpp"
 
-void			Object::LoadTextureFromFile(std::string tPath)
+void			Object::SetSignature(uint32_t tSignature)
 {
-	sf::Texture *tex = ResourceManager::LoadTexture(tPath);
-	LoadTextureFromFile(tex);
+	mSignature = tSignature;
 }
 
-void			Object::LoadTextureFromFile(sf::Texture *tTexture)
+void			Object::SetPosition(const sf::Vector2f &tPosition)
 {
-	if (!tTexture)
-	{
-		std::cout << "Failed to load texture... (Class Object) Pointer == " << (uint64_t)(tTexture) << std::endl;
-		return ;
-	}
-	mTexture = *tTexture;
-	mSprite.setTexture(mTexture);
+	mPosition = tPosition;
 }

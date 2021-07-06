@@ -7,13 +7,22 @@
 class Object
 {
 private:
-	sf::Texture		mTexture;
-	sf::Sprite		mSprite;
+	uint32_t		mSignature;
+	sf::Vector2f	mPosition;
 
 public:
 	Object(/* args */) {}
 	~Object() {}
 
-	void			LoadTextureFromFile(std::string tPath);
-	void			LoadTextureFromFile(sf::Texture *tTexture);
+	/**
+	 *	Setters
+	 **/
+	void			SetSignature(uint32_t tSignature);
+	void			SetPosition(const sf::Vector2f &tPosition);
+
+	/**
+	 *	Getters
+	 **/
+	uint32_t		GetSignature() {return (mSignature);}
+	sf::Vector2f	GetPosition() {return (mPosition);}
 };

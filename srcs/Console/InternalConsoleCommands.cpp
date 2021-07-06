@@ -1,6 +1,6 @@
 #include "Console.hpp"
 
-Console::eCommandStatus		Help(std::vector<std::string> tParams)
+Console::eCommandStatus		Help(const std::vector<std::string> &tParams)
 {
 	if (tParams.size() == 0)
 	{
@@ -23,7 +23,7 @@ Console::eCommandStatus		Help(std::vector<std::string> tParams)
 	return (Console::eCommandStatus::SUCCESS);
 }
 
-Console::eCommandStatus		Clear(std::vector<std::string> tParams)
+Console::eCommandStatus		Clear(const std::vector<std::string> &tParams)
 {
 	(void)tParams;
 	Console::ClearConsole();

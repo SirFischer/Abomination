@@ -9,3 +9,11 @@ Map::~Map()
 {
 
 }
+
+void		Map::Draw(Window *tWindow)
+{
+	for (auto &i : mRooms)
+	{
+		i.Draw(tWindow);
+	}
+}

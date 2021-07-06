@@ -2,7 +2,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-#include <list>
 #include <map>
 #include <memory>
 #include <iostream>
@@ -23,8 +22,8 @@ private:
 
 public:
 
-	static sf::Font			*LoadFont(std::string tPath);
-	static sf::Texture		*LoadTexture(std::string tPath);
-	static sf::SoundBuffer	*LoadSoundBuffer(std::string tpath);
+	static sf::Font			*LoadFont(const std::string &tPath);
+	static sf::Texture		*LoadTexture(const std::string &tPath);
+	static sf::SoundBuffer	*LoadSoundBuffer(const std::string &tPath);
 
 };
