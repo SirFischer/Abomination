@@ -1,3 +1,15 @@
+/*
+ * File: BodyPartBase.cpp
+ * Folder: BodyPart
+ * File Created: Thursday, 11th March 2021 6:13:48 pm
+ * Author: Marek Fischer
+ * -----
+ * Last Modified: Friday, 16th July 2021 9:24:44 am
+ * Modified By: Marek Fischer 
+ * -----
+ * Copyright - 2021 Deep Vertic, Deep Vertic
+ */
+
 #include "BodyPartBase.hpp"
 #include "Window.hpp"
 
@@ -13,12 +25,12 @@ namespace BodyPart
 	}
 
 
-	void			BodyPartBase::SetPosition(sf::Vector2f tPosition)
+	void			BodyPartBase::SetPosition(const sf::Vector2f &tPosition)
 	{
 		mSprite.setPosition(tPosition);
 	}
 
-	void			BodyPartBase::SetState(eEntityState tState, eEntityDirection tDirection)
+	void			BodyPartBase::SetState(const eEntityState &tState, const eEntityDirection &tDirection)
 	{
 		mState = tState;
 		mDirection = tDirection;

@@ -1,6 +1,5 @@
 *.o
 *.d
 *.a
-.vscode
 SFMLProjectTemplate
 Abomination

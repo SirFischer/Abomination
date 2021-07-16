@@ -1,3 +1,15 @@
+/*
+ * File: Object.hpp
+ * Folder: Map
+ * File Created: Monday, 15th March 2021 5:10:38 pm
+ * Author: Marek Fischer
+ * -----
+ * Last Modified: Thursday, 15th July 2021 9:41:24 am
+ * Modified By: Marek Fischer 
+ * -----
+ * Copyright - 2021 Deep Vertic, Deep Vertic
+ */
+
 #pragma once
 
 #include <SFML/Graphics.hpp>

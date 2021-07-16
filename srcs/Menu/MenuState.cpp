@@ -1,3 +1,15 @@
+/*
+ * File: MenuState.cpp
+ * Folder: Menu
+ * File Created: Monday, 1st March 2021 2:36:54 pm
+ * Author: Marek Fischer
+ * -----
+ * Last Modified: Friday, 16th July 2021 9:26:20 am
+ * Modified By: Marek Fischer 
+ * -----
+ * Copyright - 2021 Deep Vertic, Deep Vertic
+ */
+
 #include "MenuState.hpp"
 
 MenuState::MenuState(Window *tWindow)

@@ -1,3 +1,15 @@
+/*
+ * File: RoomParsing.cpp
+ * Folder: Room
+ * File Created: Friday, 16th July 2021 7:26:13 am
+ * Author: Marek Fischer
+ * -----
+ * Last Modified: Friday, 16th July 2021 7:26:38 am
+ * Modified By: Marek Fischer 
+ * -----
+ * Copyright - 2021 Deep Vertic, Deep Vertic
+ */
+
 #include "Room.hpp"
 
 void		Room::LoadSignature(std::stringstream &ss, std::string &line, std::string &token)
@@ -53,22 +65,5 @@ void		Room::LoadFromFile(std::string tPath)
 			LoadPosition(ss, line, token);
 		else if (token == "signature")
 			LoadSignature(ss, line, token);
-	}
-}
-
-
-void		Room::Draw(Window *tWindow)
-{
-	for (auto &i : mSignaturePaths)
-	{
-		mSprite.setTexture(*(ResourceManager::LoadTexture(i.second)));
-		for (auto &j : mObjects)
-		{
-			if (i.first == j.GetSignature())
-			{
-				mSprite.setPosition(j.GetPosition());
-				tWindow->Draw(mSprite);
-			}
-		}
 	}
 }

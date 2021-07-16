@@ -1,3 +1,15 @@
+/*
+ * File: InternalConsoleCommands.cpp
+ * Folder: Console
+ * File Created: Thursday, 4th March 2021 6:11:44 pm
+ * Author: Marek Fischer
+ * -----
+ * Last Modified: Thursday, 15th July 2021 9:47:10 am
+ * Modified By: Marek Fischer 
+ * -----
+ * Copyright - 2021 Deep Vertic, Deep Vertic
+ */
+
 #include "Console.hpp"
 
 Console::eCommandStatus		Help(const std::vector<std::string> &tParams)

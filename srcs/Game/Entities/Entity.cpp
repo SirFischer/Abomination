@@ -1,3 +1,15 @@
+/*
+ * File: Entity.cpp
+ * Folder: Entities
+ * File Created: Saturday, 6th March 2021 12:48:58 pm
+ * Author: Marek Fischer
+ * -----
+ * Last Modified: Friday, 16th July 2021 9:24:26 am
+ * Modified By: Marek Fischer 
+ * -----
+ * Copyright - 2021 Deep Vertic, Deep Vertic
+ */
+
 #include "Entity.hpp"
 
 #include "Window.hpp"
@@ -31,7 +43,7 @@ Entity::~Entity()
 
 }
 
-void			Entity::SetPosition(sf::Vector2f tPosition)
+void			Entity::SetPosition(const sf::Vector2f &tPosition)
 {
 	mPosition = tPosition;
 	for (auto &bodyPart : mBodyParts)

@@ -1,3 +1,15 @@
+/*
+ * File: SoundPlayer.cpp
+ * Folder: Audio
+ * File Created: Monday, 1st March 2021 2:45:33 pm
+ * Author: Marek Fischer
+ * -----
+ * Last Modified: Thursday, 15th July 2021 9:46:40 am
+ * Modified By: Marek Fischer 
+ * -----
+ * Copyright - 2021 Deep Vertic, Deep Vertic
+ */
+
 #include "SoundPlayer.hpp"
 
 std::map<eSound, std::string>	SoundPlayer::mSoundNames = std::map<eSound, std::string>();

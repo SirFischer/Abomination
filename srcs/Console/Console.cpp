@@ -1,3 +1,15 @@
+/*
+ * File: Console.cpp
+ * Folder: Console
+ * File Created: Tuesday, 2nd March 2021 3:54:10 pm
+ * Author: Marek Fischer
+ * -----
+ * Last Modified: Thursday, 15th July 2021 9:47:00 am
+ * Modified By: Marek Fischer 
+ * -----
+ * Copyright - 2021 Deep Vertic, Deep Vertic
+ */
+
 #include "Console.hpp"
 
 mf::Container									*Console::mConsoleWidget = NULL;
@@ -14,34 +26,31 @@ void		Console::Init()
 void		Console::InitUI()
 {
 	mConsoleWidget = mf::Container::Create();
-	mConsoleWidget->SetDisabled(true);
-	mConsoleWidget->SetIndex(1);
-	mConsoleWidget->SetSizePercentage(true, false)->SetSize(100, 500);
+	mConsoleWidget->SetDisabled(true)
+	->SetIndex(1)
+	->SetSizePercentage(true, false)->SetSize(100, 500);
 	mConsoleWidget->SetBackground(sf::Color(57, 57, 57, 200));
 	mf::GUI::AddWidget(mConsoleWidget);
 
 	mConsoleTextBox = mf::Text::Create("assets/fonts/FiraCode-VariableFont_wght.ttf", "");
-	mConsoleTextBox->SetSizePercentage(true, true)->SetSize(98, 85);
-	mConsoleTextBox->SetPositionPercentage(true, true)->SetPosition(1, 1);
-	mConsoleTextBox->SetBackgroundColor(sf::Color(37, 37, 37, 200));
-	mConsoleTextBox->SetOutlineColor(sf::Color(100, 100, 100, 255));
-	mConsoleTextBox->SetOutlineThickness(1);
-	mConsoleTextBox->SetCharacterSize(14);
-	mConsoleTextBox->GetScrollBar()->SetBackgroundColor(sf::Color(37, 37, 37, 200));
-	mConsoleTextBox->GetScrollBar()->GetButton()->SetBackground(sf::Color(160, 160, 160, 160));
-	mConsoleTextBox->GetScrollBar()->GetButton()->SetHoverBackground(sf::Color(100, 100, 120, 160));
+	mConsoleTextBox->SetSizePercentage(true, true)->SetSize(98, 85)
+	->SetPositionPercentage(true, true)->SetPosition(1, 1)
+	->SetBackgroundColor(sf::Color(37, 37, 37, 200))
+	->SetOutlineColor(sf::Color(100, 100, 100, 255))->SetOutlineThickness(1)
+	->SetCharacterSize(14);
+	mConsoleTextBox->GetScrollBar()->SetBackgroundColor(sf::Color(37, 37, 37, 200))
+	->GetButton()->SetBackground(sf::Color(160, 160, 160, 160))
+	->SetHoverBackground(sf::Color(100, 100, 120, 160));
 	mConsoleWidget->AddWidget(mConsoleTextBox);
 
 	mConsoleInputBox = mf::Text::Create("assets/fonts/FiraCode-VariableFont_wght.ttf", "");
-	mConsoleInputBox->SetSizePercentage(true, false)->SetSize(98, 30);
-	mConsoleInputBox->SetPositionPercentage(true, true)->SetPosition(1, 90);
-	mConsoleInputBox->SetBackgroundColor(sf::Color(37, 37, 37, 200));
-	mConsoleInputBox->SetOutlineColor(sf::Color(100, 100, 100, 255));
-	mConsoleInputBox->SetOutlineThickness(1);
-	mConsoleInputBox->SetCharacterSize(12);
-	mConsoleInputBox->EnableEdit();
+	mConsoleInputBox->SetSizePercentage(true, false)->SetSize(98, 30)
+	->SetPositionPercentage(true, true)->SetPosition(1, 90)
+	->SetBackgroundColor(sf::Color(37, 37, 37, 200))
+	->SetOutlineColor(sf::Color(100, 100, 100, 255))
+	->SetOutlineThickness(1)->SetCharacterSize(12)
+	->EnableEdit();
 	mConsoleWidget->AddWidget(mConsoleInputBox);
-	
 }
 
 void		Console::ToggleConsole()

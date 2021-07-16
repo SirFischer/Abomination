@@ -1,3 +1,15 @@
+/*
+ * File: EventHandler.cpp
+ * Folder: Event
+ * File Created: Wednesday, 3rd March 2021 1:23:47 pm
+ * Author: Marek Fischer
+ * -----
+ * Last Modified: Friday, 16th July 2021 9:27:02 am
+ * Modified By: Marek Fischer 
+ * -----
+ * Copyright - 2021 Deep Vertic, Deep Vertic
+ */
+
 #include "EventHandler.hpp"
 
 EventHandler::tEventStateList		EventHandler::mEventStates = EventHandler::tEventStateList();

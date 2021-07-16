@@ -1,3 +1,15 @@
+/*
+ * File: Player.cpp
+ * Folder: Game
+ * File Created: Saturday, 6th March 2021 12:49:11 pm
+ * Author: Marek Fischer
+ * -----
+ * Last Modified: Friday, 16th July 2021 9:26:08 am
+ * Modified By: Marek Fischer 
+ * -----
+ * Copyright - 2021 Deep Vertic, Deep Vertic
+ */
+
 #include "Player.hpp"
 
 Player::Player()

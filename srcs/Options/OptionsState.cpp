@@ -1,3 +1,15 @@
+/*
+ * File: OptionsState.cpp
+ * Folder: Options
+ * File Created: Monday, 1st March 2021 2:45:33 pm
+ * Author: Marek Fischer
+ * -----
+ * Last Modified: Friday, 16th July 2021 9:26:30 am
+ * Modified By: Marek Fischer 
+ * -----
+ * Copyright - 2021 Deep Vertic, Deep Vertic
+ */
+
 #include "OptionsState.hpp"
 
 OptionsState::OptionsState(Window *tWindow)

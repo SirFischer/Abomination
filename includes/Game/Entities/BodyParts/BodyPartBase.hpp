@@ -1,3 +1,15 @@
+/*
+ * File: BodyPartBase.hpp
+ * Folder: BodyParts
+ * File Created: Saturday, 6th March 2021 1:02:39 pm
+ * Author: Marek Fischer
+ * -----
+ * Last Modified: Thursday, 15th July 2021 9:40:16 am
+ * Modified By: Marek Fischer 
+ * -----
+ * Copyright - 2021 Deep Vertic, Deep Vertic
+ */
+
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Entities/EntityState.hpp"
@@ -21,8 +33,8 @@ namespace BodyPart
 		~BodyPartBase() {}
 
 		void				SetTexture(sf::Texture	*tTexture);
-		void				SetPosition(sf::Vector2f tPosition);
-		void				SetState(eEntityState tState, eEntityDirection tDirection);
+		void				SetPosition(const sf::Vector2f &tPosition);
+		void				SetState(const eEntityState &tState, const eEntityDirection &tDirection);
 
 		void				Update();
 		void				Render(Window *tWindow);

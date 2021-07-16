@@ -1,3 +1,15 @@
+/*
+ * File: Entity.hpp
+ * Folder: Entities
+ * File Created: Saturday, 6th March 2021 12:48:24 pm
+ * Author: Marek Fischer
+ * -----
+ * Last Modified: Thursday, 15th July 2021 9:10:20 am
+ * Modified By: Marek Fischer 
+ * -----
+ * Copyright - 2021 Deep Vertic, Deep Vertic
+ */
+
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <memory>
@@ -9,11 +21,13 @@
 #include "EntityDirection.hpp"
 #include "Event/EventHandler.hpp"
 
+//Pimpl
 class Window;
 
 class Entity
 {
 protected:
+	
 	enum class							eBodyPart
 	{
 										HEAD,
@@ -23,6 +37,7 @@ protected:
 										LEG_LEFT,
 										LEG_RIGHT
 	};
+	typedef std::map<eBodyPart, std::shared_ptr<BodyPart::BodyPartBase>> BodyParts;
 
 	//BodyParts
 	std::shared_ptr<BodyPart::Head>		mHead;
@@ -31,7 +46,7 @@ protected:
 	std::shared_ptr<BodyPart::Arm>		mArmRight;
 	std::shared_ptr<BodyPart::Leg>		mLegLeft;
 	std::shared_ptr<BodyPart::Leg>		mLegRight;
-	std::map<eBodyPart, std::shared_ptr<BodyPart::BodyPartBase>>	mBodyParts;  //LIST FORM FOR EASY LISTING WHEN PERFORMING ACTIONS ON ALL PARTS (yes i'm lazy)
+	BodyParts							mBodyParts;  //LIST FORM FOR EASY LISTING WHEN PERFORMING ACTIONS ON ALL PARTS (yes i'm lazy)
 
 	//Mechanics
 	sf::Vector2f						mPosition = sf::Vector2f(0, 0);
@@ -48,8 +63,8 @@ public:
 	Entity(/* args */);
 	~Entity();
 
-	void				SetPosition(sf::Vector2f tPosition);
+	void								SetPosition(const sf::Vector2f &tPosition);
 
-	void				Update();
-	void				Render(Window* tWindow);
+	void								Update();
+	void								Render(Window* tWindow);
 };

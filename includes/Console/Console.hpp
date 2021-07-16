@@ -7,6 +7,17 @@
 
 #include "mfGUI.hpp"
 #include "Event/EventHandler.hpp"
+/*
+ * File: Console.hpp
+ * Folder: Console
+ * File Created: Tuesday, 2nd March 2021 3:47:28 pm
+ * Author: Marek Fischer
+ * -----
+ * Last Modified: Thursday, 15th July 2021 9:39:53 am
+ * Modified By: Marek Fischer 
+ * -----
+ * Copyright - 2021 Deep Vertic, Deep Vertic
+ */
 
 class Console
 {

@@ -1,3 +1,15 @@
+/*
+ * File: EventHandler.hpp
+ * Folder: Event
+ * File Created: Wednesday, 3rd March 2021 1:23:11 pm
+ * Author: Marek Fischer
+ * -----
+ * Last Modified: Thursday, 15th July 2021 9:38:13 am
+ * Modified By: Marek Fischer 
+ * -----
+ * Copyright - 2021 Deep Vertic, Deep Vertic
+ */
+
 #pragma once
 
 #include <map>
